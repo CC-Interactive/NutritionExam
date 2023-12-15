@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Meal Tracker</title>
+    <link rel="stylesheet" href="MealTracker.css">
+</head>
+<body>
+
+<header class="header">
+    <h1>NutriTracker</h1>
+    <nav>
+        <ul class="navigation-list">
+            <li><a class="navigation-link" href="Dashboard.html">Dashboard</a></li>
+            <li><a class="navigation-link" href="MealCreator.html">Meal Creator</a></li>
+            <li><a class="navigation-link" href="MealTracker.html" class="active">Meal Tracker</a></li>
+            <li><a class="navigation-link" href="NutriReport.html">Nutri Report</a></li>
+        </ul>
+    </nav>
+</header>
+
+<div class="container">
+    <main class="main-content">
+        <h2>Meal Tracker</h2>
+        <div class="meal-tracker-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Meal & Source</th>
+                        <th>Meal</th>
+                        <th>Weight and Energy</th>
+                        <th>Added on</th>
+                        <th>% of Daily Cons</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Table rows will be dynamically inserted here -->
+                    <tr>
+                        <td contenteditable="true">Meal & Source</td>
+                        <td contenteditable="true">Meal</td>
+                        <td contenteditable="true">Weight and Energy</td>
+                        <td>Added on</td>
+                        <td contenteditable="true">% of Daily Cons</td>
+                        <td>
+                            <button class="book-button">📖</button>
+                            <button class="pen-button">🖋️</button>
+                            <button class="delete-button">🗑️</button>
+                            <button class="plus-button">+</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+</div>
+
+<footer>
+    <!-- Footer content goes here -->
+</footer>
+
+</body>
+</html>

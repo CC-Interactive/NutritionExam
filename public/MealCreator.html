@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Meal Creator</title>
+    <link rel="stylesheet" href="MealCreator.css">
+</head>
+<body>
+
+<header class="header">
+    <h1>NutriTracker</h1>
+    <nav>
+        <ul class="navigation-list">
+            <li><a class="navigation-link" href="Dashboard.html">Dashboard</a></li>
+            <li><a class="navigation-link" href="MealCreator.html">Meal Creator</a> </li>
+            <li><a class="navigation-link"href = "MealTracker.html">Meal Tracker</a> </li>
+            <li><a class="navigation-link" href = "NutriReport.html">Nutri Report</a> </li>
+           
+        </ul>
+    </nav>
+</header>
+
+<div class="container"> <!-- Tilføjet container-div -->
+    <main class="main-content">
+        <h2>Meal Creator</h2>
+        <button id="food-inspector-button">Food Inspector</button> 
+        <div class="meal-creator-container">
+            <table>
+       
+                <thead>
+                    <tr>
+                        <th>Meal Name</th>
+                        <th>Total Kcal per 100g</th>
+                        <th>Added on</th>
+                        <th># Ingredients</th>
+                        <th>Times Eaten</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Table rows will be dynamically inserted here -->
+                    <tr>
+                        <td contenteditable="true">Måltidsnavn</td>
+                        <td contenteditable="true">Total Kcal pr. 100g</td>
+                        <td>Added on</td>
+                        <td contenteditable="true"># Ingredients</td>
+                        <td contenteditable="true">Times Eaten</td>
+                        <td>
+                            <button class="book-button">📖</button>
+                            <button class="plus-button">+</button>
+                            <button class="delete-button">🗑️</button>
+                            <button class="pen-button">🖋️</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+           
+        </div>
+    </main>
+</div> <!-- Slut på container-div -->
+
+<footer>
+    <!-- Footer content goes here -->
+</footer>
+
+</body>
+</html>

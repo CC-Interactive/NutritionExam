@@ -1,0 +1,74 @@
+body {
+    font-family: 'Nunito', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background: #ffffff;
+}
+
+.container {
+    border: 2px solid #76b947;
+    border-radius: 10px;
+    padding: 10px;
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 25px;
+    background: #def6d8;
+
+    color: #91c789;
+}
+  
+.header h1 {
+    margin-right: 20px;
+}
+
+.navigation-list {
+    list-style: none;
+    padding: 20px;
+    margin-right: 1000px;
+    align-items: center;
+    display: flex;
+    gap: 200px; /* Juster dette for at kontrollere mellemrum mellem navigation links */
+}
+
+.navigation-link {
+    text-decoration: none;
+    color: #757575;
+    font-weight: bold;
+}
+
+  
+  .container {
+    width: 100%;
+    background-color: rgb(174, 135, 135);
+    margin-top: 100px;
+
+    
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  th, td {
+    border: 1px solid #ddd;
+    text-align: left;
+    padding: 8px;
+  }
+  
+  th {
+    background-color: #4CAF50;
+    color: white;
+  }
+  

@@ -1,0 +1,69 @@
+body {
+    font-family: 'Nunito', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background: #ffffff; /* Hvid baggrund som vist på Meal Creator */
+}
+
+.container {
+    border: 2px solid #91c789; /* Ramme omkring nederste del af indholdet */
+    border-radius: 10px; /* Afrundede hjørner */
+    padding: 10px; /* Intern polstring */
+    width: 80%; /* Sæt bredden af containeren til 80% af visningen */
+    margin: 0 auto; /* Centrér containeren horisontalt */
+    display: flex; /* Brug flex for at placere indholdet i kolonneformat */
+    flex-direction: column; /* Kolonne-layout */
+    align-items: center; /* Centrér indholdet vertikalt */
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 25px;
+    background: #def6d8; /* Grøn farve svarende til Meal Creator */
+    color: #91c789;
+}
+
+.header h1 {
+    margin-right: 20px; /* Juster for at balancere layoutet */
+}
+
+
+.navigation-list {
+    list-style: none;
+    padding: 20px;
+    margin-right: 1000px;
+    align-items: center;
+    display: flex;
+    gap: 200px; /* Juster dette for at kontrollere mellemrum mellem navigation links */
+}
+
+.navigation-link {
+    text-decoration: none;
+    color: #757575;
+    font-weight: bold;
+}
+
+
+.main-content {
+    display: flex;
+    flex-direction: column; /* Ændret til kolonne-layout */
+    align-items: center; /* Centrér indholdet vertikalt */
+    padding: 20px;
+}
+
+.stats-box {
+    border: 1px solid #be0505;
+    border-radius: 8px; /* Afrundede hjørner svarende til Meal Creator */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Blød skygge som i designet */
+    padding: 1px; /* Større padding for mere rummelighed */
+    margin-top: 10px; /* Mindre margin mellem bokse */
+    width: 100%; /* Fyld bredden af containeren */
+    text-align: left; /* Tekst justeret til venstre som i skærmbilledet */
+    background: #f7f7f7; /* Let grå baggrund for boksene */
+    color: #333; /* Mørkere tekstfarve for kontrast */
+}
+
+/* Tilføj yderligere specifik styling som nødvendigt */
