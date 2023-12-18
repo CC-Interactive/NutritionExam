@@ -29,7 +29,7 @@ function displayResults(products) {
 function getFoodCompSpecs(productId, specsDiv, sortKeys) {
 	recieverGetProductDataById(productId).then(product => {
 		for (key in product.characteristics) {
-			specsDiv.innerHTML += '<p>' + key + ': ' + product.characteristics[key] + '</p>';
+			specsDiv.innerHTML += '<p>' + appData.productCharacteristics[key].data.parameterName + ': ' + product.characteristics[key] + '</p>';
 		}
 	});
 }

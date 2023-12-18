@@ -1,0 +1,114 @@
+body {
+  font-family: "Nunito", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background: #ffffff; /* Eller hvilken farve du foretrækker */
+}
+.logo {
+  max-width: 40px; /* Juster bredden efter behov */
+  margin-left: 10px;
+  /* Tilføj margen efter behov */
+}
+
+/* Stil for logoens tekst (NutriTracker) */
+.logo-text {
+  font-size: 24px; /* Juster skriftstørrelsen efter behov */
+  font-weight: bold; /* Tilføj fed skrift efter behov */
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px;
+  background: #def6d8;
+  color: #91c789;
+}
+
+.header h1 {
+  margin-right: 100px; /* Juster som nødvendigt for at placere dine links tættere på h1 */
+}
+
+.navigation-list {
+  list-style: none;
+  padding: 20px;
+  margin-right: 1000px;
+  align-items: center;
+  display: flex;
+  gap: 200px; /* Juster dette for at kontrollere mellemrum mellem navigation links */
+}
+
+.navigation-link {
+  text-decoration: none;
+  color: #757575;
+  font-weight: bold;
+}
+
+.main-content {
+  display: grid;
+  justify-content: center; /* Dette vil centrere boksene i 'main-content' */
+  flex-direction: row;
+}
+
+.stats-box {
+  border: 1px solid #5a9718;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  margin: 1rem; /* Giver plads mellem bokse */
+  flex: 1; /* Gør at bokse kan vokse for at fylde tilgængelig plads */
+  min-width: 200px; /* Minimumsbredde for hver boks */
+  text-align: center;
+  background: rgb(255, 255, 255);
+}
+
+.dashboard {
+  max-width: 1200px;
+  margin: 50px auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 20px;
+}
+.card {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 200px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+.card-header {
+  background-color: #bbdefb;
+  border-radius: 5px;
+  padding: 10px;
+  margin: -20px -20px 20px -20px;
+  width: 140px;
+  position: relative;
+  top: -20px;
+  align-self: center;
+}
+.card-header h2 {
+  margin: 0;
+  color: #0d47a1;
+  font-size: 18px;
+}
+.card-content {
+  margin: 20px 0;
+}
+.card-content h3 {
+  color: #26a69a;
+  font-size: 38px;
+  margin: 0;
+  padding: 0;
+}
+.card-content p {
+  color: #333;
+  font-size: 16px;
+  margin: 0;
+}
+

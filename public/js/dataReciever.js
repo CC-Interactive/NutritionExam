@@ -44,9 +44,10 @@ async function recieverGetProductDataById(productId) {
 				product.characteristics = [];
 				const promiseArr = [];
 				for (const key in appData.productCharacteristics) {
-					const promise = integrationFoodCompSpec(productId, appData.productCharacteristics[key]);
+					const promise = integrationFoodCompSpec(productId, appData.productCharacteristics[key].id);
 					promiseArr.push(promise);
 					promise.then(response => {
+						appData.productCharacteristics[key].data = response[0];
 						product.characteristics[key] = Number(response[0].resVal.replace(',', '.'));
 					});
 				}
