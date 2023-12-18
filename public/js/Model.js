@@ -25,8 +25,18 @@ const appData = {
 	 *     }
 	 * }
 	 */
+	mealTrecker: {
+		
+	},
 	meal: {
-
+		// 100:
+		// {
+		// 	"id": 100,
+		// 	"name": "Meal Name",
+		// 	"energy": 0,
+		// 	"createDate": "2023-12-18T15:43:39.222Z",
+		// 	"ingredients": []
+		// }
 	},
 	/**
 	 * IdBaseObject
