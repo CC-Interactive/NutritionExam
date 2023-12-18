@@ -9,7 +9,14 @@
 <body>
 
 <header class="header">
-    <div class="logo">
+	<style>
+        .pageContent,.itemBlock,.itemRow,itemCell {
+            border: 1px solid black;
+            padding: 5px;
+        }
+	</style>
+
+	<div class="logo">
         <span class="logo-text">NutriTracker</span>
         <img src="src/Æble.png" alt="Dit Logo" class="logo-image">
     </div>
@@ -20,7 +27,8 @@
             <li><a class="navigation-link" href="#MealCreator">Meal Creator</a> </li>
             <li><a class="navigation-link" href = "#MealTracker">Meal Tracker</a> </li>
             <li><a class="navigation-link" href = "#NutriReport">Nutri Report</a> </li>
-           
+            <li><a class="navigation-link" href = "#ProductDescription">Product Description</a> </li>
+
         </ul>
     </nav>
 </header>
@@ -163,6 +171,15 @@
         </article>
     </section>
 </div>
-<script src="js/nagivation.js"></script>
+<div id="ProductDescription" class="main-content disabled">
+</div>
+<script src="js/Nagivation.js"></script>
+<script src="js/Model.js"></script>
+<script src="js/Integration.js"></script>
+<script src="js/DataReciever.js"></script>
+<script src="js/ProductDetail.js"></script>
+<script type="text/javascript">
+	productDetailUpdateContent(document.getElementById('ProductDescription'), 1837);
+</script>
 </body>
 </html>
