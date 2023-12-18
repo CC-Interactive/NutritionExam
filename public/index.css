@@ -52,7 +52,7 @@ body {
 }
 
 .main-content {
-  display: grid;
+  display: block;
   justify-content: center; /* Dette vil centrere boksene i 'main-content' */
   flex-direction: row;
 }
