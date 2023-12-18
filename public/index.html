@@ -87,10 +87,70 @@
       </section>
     </div>
     <div id="MealTracker" class="main-content disabled">
-      <h2>Meal Tracker</h2>
       <section class="stats-container">
-        <!-- Tilføjet klasse for at style containeren -->
+        <div class="meal-tracker-card-container">
+          <div class="title-container">
+            <div class="title">Meal Tracker</div>
+            <button id="addMealButton">Add Meal</button>
+          </div>
+          <div class="meal-header">
+            <div class="source" style="width: 20%">Meal & Source</div>
+            <div class="source" style="width: 12%">Meal</div>
+            <div class="source" style="width: 12%">Weight & Energy</div>
+            <div class="source" style="width: 12%">Added on</div>
+            <div class="source" style="width: 12%">% of daily cons</div>
+            <div class="source" style="width: 12%; text-align: end">
+              Actions
+            </div>
+          </div>
+          <div class="meal">
+            <div class="meal-name" style="width: 20%">
+              Butter Chicken
+              <div class="source">valdemarsro</div>
+            </div>
+            <div class="meal-type" style="width: 12%">Dinner</div>
+            <div class="weight-energy" style="width: 12%">
+              353g
+              <div class="source">403 Kcal</div>
+            </div>
+            <div class="date" style="width: 12%">27-12-2023</div>
+            <div class="percent" style="width: 12%">30g 12%</div>
+            <div class="actions" style="width: 12%; justify-content: end">
+              <div class="icon">✏️</div>
+              <div class="icon">🗑️</div>
+            </div>
+          </div>
+        </div>
+
       </section>
+      <div id="addMealPopup" class="popup" style="display: none;">
+        <div class="popup-content">
+          <span class="close-button">&times;</span>
+          <form id="addMealForm">
+            <!-- Your form fields go here -->
+            <input type="text" placeholder="Meal Name" name="mealName">
+            <input type="text" placeholder="Source" name="source">
+            <!-- Add more fields as necessary -->
+            <button type="submit">Add Meal</button>
+          </form>
+        </div>
+      </div>
+      <script>
+        // JavaScript to handle the popup
+        document.getElementById('addMealButton').addEventListener('click', function() {
+          document.getElementById('addMealPopup').style.display = 'flex';
+        });
+        
+        document.querySelector('.close-button').addEventListener('click', function() {
+          document.getElementById('addMealPopup').style.display = 'none';
+        });
+        
+        // Handle form submission here if needed
+        document.getElementById('addMealForm').addEventListener('submit', function(event) {
+          event.preventDefault();
+          document.getElementById('addMealPopup').style.display = 'none';
+        });
+      </script>
     </div>
     <div id="NutriReport" class="main-content disabled">
       <h2>NutriReport</h2>
