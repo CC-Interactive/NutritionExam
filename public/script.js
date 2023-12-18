@@ -27,11 +27,14 @@ function displayResults(products) {
 }
 
 function getFoodCompSpecs(productId, specsDiv, sortKeys) {
-	recieverGetProductDataById(productId).then(product => {
-		for (key in product.characteristics) {
-			specsDiv.innerHTML += '<p>' + appData.productCharacteristics[key].data.parameterName + ': ' + product.characteristics[key] + '</p>';
-		}
-	});
+	const blockId = 'productContnentBlockForProductId' + productId;
+	specsDiv.innerHTML += '<div id="' + blockId + '"></div>';
+	productDetailUpdateContent(document.getElementById(blockId), productId);
+	// recieverGetProductDataById(productId).then(product => {
+	// 	for (key in product.characteristics) {
+	// 		specsDiv.innerHTML += '<p>' + appData.productCharacteristics[key].data.parameterName + ': ' + product.characteristics[key] + '</p>';
+	// 	}
+	// });
 }
 
 //TESTER
