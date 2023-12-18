@@ -1,4 +1,59 @@
 const appData = {
+	/**
+	 * IdBaseObject
+	 * {
+	 *     id: {
+	 *         id: -1,
+	 *         productId: -1,
+	 *         weight: -1,//per 100 gram of meal. Or percent in content
+	 *     }
+	 * }
+	 */
+	mealIngredient: {
+
+	},
+	/**
+	 * IdBaseObject
+	 * {
+	 *     id: {
+	 *         id: -1,
+	 *         name: null,
+	 *         ingredients: null,//IdBaseObject of mealIngredient
+	 *         createDate: null
+	 *     }
+	 * }
+	 */
+	meal: {
+
+	},
+	/**
+	 * IdBaseObject
+	 * {
+	 *     id: {
+	 *         id: -1,
+	 *         name: null,
+	 *         characteristics: []//Array of values from  productCharacteristics.data
+	 *         dataLoaded: false // data caching flag. Shows that characteristics are loaded or not
+	 *     }
+	 * }
+	 * Data example:
+	 * {
+	 *  1837: {
+	 *     "id": 1837,
+	 *     "name": "Pearl onion. frozen",
+	 *     "characteristics": [
+	 *       calories: 29.14
+	 *       dryMatter: 12.61
+	 *       energyKj: 119.47
+	 *       fat: 0
+	 *       fiber: 8.05
+	 *       protein: 1.21875
+	 *       water: 87.39
+	 *     ],
+	 *     "dataLoaded": true
+	 *   }
+	 * }
+	 */
 	products: {
 
 	},
