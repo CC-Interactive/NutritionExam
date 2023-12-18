@@ -28,15 +28,48 @@ const appData = {
 	mealTrecker: {
 		
 	},
+	// 100:
+	// {
+	// 	"id": 100,
+	// 	"name": "Meal Name",
+	// 	"energy": 0,
+	// 	"createDate": "2023-12-18T15:43:39.222Z",
+	// 	"ingredients": []
+	// }
 	meal: {
-		// 100:
-		// {
-		// 	"id": 100,
-		// 	"name": "Meal Name",
-		// 	"energy": 0,
-		// 	"createDate": "2023-12-18T15:43:39.222Z",
-		// 	"ingredients": []
-		// }
+		1001: {
+			id: 1001,
+			name: "French frize",
+			energy: 0,
+			water: 0,
+			protein: 0,
+			fat: 0,
+			fiber: 0,
+			createDate: new Date("2023-12-18T20:55:43.760Z"),
+			ingredients: []
+		},
+		1002: {
+			id: 1002,
+			name: "Burger",
+			energy: 0,
+			water: 0,
+			protein: 0,
+			fat: 0,
+			fiber: 0,
+			createDate: new Date("2023-12-18T20:56:03.824Z"),
+			ingredients: []
+		},
+		1004: {
+			id: 1004,
+			name: "Pizza Margarita",
+			energy: 0,
+			water: 0,
+			protein: 0,
+			fat: 0,
+			fiber: 0,
+			createDate: new Date("2023-12-18T20:56:35.958Z"),
+			ingredients: []
+		}
 	},
 	/**
 	 * IdBaseObject

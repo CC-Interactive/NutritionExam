@@ -5,7 +5,7 @@ function mealCreatorUpdateContent(element) {
 		'<div class="pageContent mealPage meal-tracker-card-container">' +
 		'	<div class = "title-container">' +
 		'		<div class="title">Meal Creator</div>' +
-		'			<button class="addMealButton" onclick="mealCreatorAddMeal(this);">Add Meal</button>' +
+		'			<button class="addMealButton" onclick="mealCreatorAddMeal();">Add Meal</button>' +
 		'	</div>';
 
 	content +=
@@ -23,13 +23,16 @@ function mealCreatorUpdateContent(element) {
 		const meal = appData.meal[key];
 		content += '' +
 			'	<div class="itemRow meal itemId' + meal.id + '">' +
-			'		<div class="itemCell editable" style="width: 20%">' + meal.name + '</div>' +
+			'		<div class="itemCell editable editableFieldName" style="width: 20%">' + meal.name + '</div>' +
 			'		<div class="itemCell" style="width: 15%">' + meal.energy + '</div>' +
 			'		<div class="itemCell" style="width: 12%">' + meal.createDate.toLocaleDateString() + '</div>' +
 			'		<div class="itemCell" style="width: 12%">' + meal.ingredients.length + '</div>' +
 			'		<div class="itemCell" style="width: 12%"> Meal Tracker Integration </div>' +
 			'		<div class="itemCell buttons" style="width: 12%; justify-content: end;">' +
-			'			<div class="button buttonEdit" onclick="mealCreatorEditMeal(this);">✏️</div>' +
+			'			<div class="button buttonIngr" onclick="mealCreatorIngredient(' + meal.id + ');">📖</div>' +
+			'			<div class="button buttonEditStart" onclick="mealCreatorEditStart(' + meal.id + ');">✏️</div>' +
+			'			<div class="button buttonEditFinish disabled" onclick="mealCreatorEditFinish(' + meal.id + ');">💾</div>' +
+			'			<div class="button buttonEditFinish" onclick="mealCreatorDelete(' + meal.id + ');">🗑</div>' +
 			'		</div>' +
 			'	</div>' +
 			'';
@@ -39,10 +42,16 @@ function mealCreatorUpdateContent(element) {
 	content += '</div>';
 	element.innerHTML += content;
 }
-function mealCreatorFindContainer(control) {
-	return control.closest('.mealPage').parentNode
+
+function mealCreatorFindPageContent() {
+	return document.getElementsByClassName("pageContent mealPage")[0];
 }
-function mealCreatorAddMeal(button) {
+
+function mealCreatorFindContainer() {
+	return mealCreatorFindPageContent().parentNode
+}
+
+function mealCreatorAddMeal() {
 	let id = modelGenerateId();
 	appData.meal[id] = {
 		id: id,
@@ -55,17 +64,31 @@ function mealCreatorAddMeal(button) {
 		createDate: new Date(),
 		ingredients: []
 	};
-	mealCreatorUpdateContent(mealCreatorFindContainer(button));
+	mealCreatorUpdateContent(mealCreatorFindContainer());
 }
-function mealCreatorEditMeal(button) {
-	let row = control.closest('.mealPage');
-	appData.meal[id] = {
-		id: id,
-		name: 'Meal Name',
-		energy: 0,
-		createDate: new Date(),
-		ingredients: []
-	};
-	mealCreatorUpdateContent(mealCreatorFindContainer(button));
+
+function mealCreatorEditStart(mealId) {
+	let row = mealCreatorFindPageContent().getElementsByClassName('itemRow itemId' + mealId)[0],
+		editStart = row.getElementsByClassName('button buttonEditStart')[0],
+		editFinish = row.getElementsByClassName('button buttonEditFinish')[0];
+	row.querySelectorAll('.itemCell.editable').forEach((item) => {
+		item.setAttribute('contenteditable', true);
+		item.classList.add('editing');
+	});
+	editStart.classList.add('disabled');
+	editFinish.classList.remove('disabled');
+
+	// mealCreatorUpdateContent(mealCreatorFindContainer(button));
+}
+function mealCreatorEditFinish(mealId) {
+	let row = mealCreatorFindPageContent().getElementsByClassName('itemRow itemId' + mealId)[0],
+		nameCell = row.getElementsByClassName('itemCell editable editableFieldName')[0];
+	appData.meal[mealId].name = nameCell.textContent;
+	mealCreatorUpdateContent(mealCreatorFindContainer());
+}
+function mealCreatorDelete(mealId) {
+	delete appData.meal[mealId]
+
+	mealCreatorUpdateContent(mealCreatorFindContainer());
 }
 
