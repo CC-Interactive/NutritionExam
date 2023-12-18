@@ -5,10 +5,10 @@ function mealCreatorUpdateContent(element) {
 		'<div class="pageContent mealPage meal-tracker-card-container">' +
 		'	<div class = "title-container">' +
 		'		<div class="title">Meal Creator</div>' +
-		'			<button class="addMealButton" onclick="mealCreatorAddMeal(\'' + element.id + '\');">Add Meal</button>' +
+		'			<button class="addMealButton" onclick="mealCreatorAddMeal(this);">Add Meal</button>' +
 		'	</div>';
 
-	content += 
+	content +=
 		'	<div class="itemRow itemHeaderRow meal-header">' +
 		'		<div class="itemCell itemHeader source" style="width: 20%">Meal Name</div>' +
 		'		<div class="itemCell itemHeader source" style="width: 15%">Total Kcal pr. 100g</div>' +
@@ -17,7 +17,7 @@ function mealCreatorUpdateContent(element) {
 		'		<div class="itemCell itemHeader source" style="width: 12%">Times Eaten</div>' +
 		'		<div class="itemCell itemHeader source" style="width: 12%; justify-content: end;">Actions</div>' +
 		'';
-	
+
 	content += '</div>';
 	for (const key in appData.meal) {
 		const meal = appData.meal[key];
@@ -35,9 +35,14 @@ function mealCreatorUpdateContent(element) {
 			'';
 	}
 	content += '</div>';
+
+	content += '</div>';
 	element.innerHTML += content;
 }
-function mealCreatorAddMeal(containerId) {
+function mealCreatorFindContainer(control) {
+	return control.closest('.mealPage').parentNode
+}
+function mealCreatorAddMeal(button) {
 	let id = modelGenerateId();
 	appData.meal[id] = {
 		id: id,
@@ -45,6 +50,6 @@ function mealCreatorAddMeal(containerId) {
 		energy: 0,
 		createDate: new Date(),
 		ingredients: []
-	}
-	mealCreatorUpdateContent(document.getElementById(containerId));
+	};
+	mealCreatorUpdateContent(mealCreatorFindContainer(button));
 }
