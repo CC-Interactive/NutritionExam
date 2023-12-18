@@ -29,7 +29,7 @@ function mealCreatorUpdateContent(element) {
 			'		<div class="itemCell" style="width: 12%">' + meal.ingredients.length + '</div>' +
 			'		<div class="itemCell" style="width: 12%"> Meal Tracker Integration </div>' +
 			'		<div class="itemCell buttons" style="width: 12%; justify-content: end;">' +
-			'			<div class="button buttonEdit" >✏️</div>' +
+			'			<div class="button buttonEdit" onclick="mealCreatorEditMeal(this);">✏️</div>' +
 			'		</div>' +
 			'	</div>' +
 			'';
@@ -48,8 +48,24 @@ function mealCreatorAddMeal(button) {
 		id: id,
 		name: 'Meal Name',
 		energy: 0,
+		water: 0,
+		protein: 0,
+		fat: 0,
+		fiber: 0,
 		createDate: new Date(),
 		ingredients: []
 	};
 	mealCreatorUpdateContent(mealCreatorFindContainer(button));
 }
+function mealCreatorEditMeal(button) {
+	let row = control.closest('.mealPage');
+	appData.meal[id] = {
+		id: id,
+		name: 'Meal Name',
+		energy: 0,
+		createDate: new Date(),
+		ingredients: []
+	};
+	mealCreatorUpdateContent(mealCreatorFindContainer(button));
+}
+
