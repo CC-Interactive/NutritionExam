@@ -4,6 +4,7 @@ const appData = {
 	 * {
 	 *     id: {
 	 *         id: -1,
+	 *         mealId: -1,
 	 *         productId: -1,
 	 *         weight: -1,//per 100 gram of meal. Or percent in content
 	 *     }
@@ -18,7 +19,7 @@ const appData = {
 	 *     id: {
 	 *         id: -1,
 	 *         name: null,
-	 *         ingredients: null,//IdBaseObject of mealIngredient
+	 *         ingredients: [],//Array of mealIngredient Id
 	 *         createDate: null
 	 *     }
 	 * }
