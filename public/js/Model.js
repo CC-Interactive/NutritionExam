@@ -19,6 +19,7 @@ const appData = {
 	 *     id: {
 	 *         id: -1,
 	 *         name: null,
+	 *         energy: 0,
 	 *         ingredients: [],//Array of mealIngredient Id
 	 *         createDate: null
 	 *     }

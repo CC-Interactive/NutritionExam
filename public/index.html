@@ -81,10 +81,6 @@
       </section>
     </div>
     <div id="MealCreator" class="main-content disabled">
-      <h2>MealCreator</h2>
-      <section class="stats-container">
-        <!-- Tilføjet klasse for at style containeren -->
-      </section>
     </div>
     <div id="MealTracker" class="main-content disabled">
       <h2>Meal Tracker</h2>
@@ -104,11 +100,13 @@
     <script src="js/Integration.js"></script>
     <script src="js/DataReciever.js"></script>
     <script src="js/ProductDetail.js"></script>
+    <script src="js/MealCreator.js"></script>
     <script type="text/javascript">
       productDetailUpdateContent(
         document.getElementById("ProductDescription"),
         1837
       );
+	  mealCreatorUpdateContent(document.getElementById("MealCreator"));
     </script>
   </body>
 </html>
