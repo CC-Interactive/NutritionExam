@@ -82,6 +82,12 @@ body {
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 20px;
 }
+.dashboard-card-container {
+  height: calc(100vh - 230px);
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+}
 .card {
   background-color: #fff;
   padding: 20px;
