@@ -137,8 +137,9 @@ body {
   gap: 20px;
 }
 
-
-.itemBlockVertical, .productSearchResults, .mealIngredientBlock {
+.itemBlockVertical,
+.productSearchResults,
+.mealIngredientBlock {
   background-color: unset !important;
   box-shadow: unset !important;
   width: unset !important;
@@ -182,9 +183,6 @@ body {
   font-weight: bold;
   font-size: 28px;
 }
-
-
-
 
 .meal-tracker-card-container {
   max-width: 900px;
@@ -246,7 +244,6 @@ body {
   cursor: pointer;
 }
 
-
 .title-container {
   display: flex;
   justify-content: space-between;
@@ -255,7 +252,7 @@ body {
 
 .addMealButton {
   padding: 10px;
-  background-color: #4CAF50;
+  background-color: #4caf50;
   color: white;
   border: none;
   border-radius: 5px;
@@ -263,5 +260,10 @@ body {
 }
 
 .first-container {
-  flex: 3;
+  flex: 4;
+}
+
+.editing {
+  border: 2px solid #5acd2a;
+  border-radius: 4px;
 }

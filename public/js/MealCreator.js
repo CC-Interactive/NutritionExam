@@ -4,7 +4,7 @@ function mealCreatorUpdateContent(element) {
 	let content = '' +
 		'<div class="pageContent mealPage meal-tracker-card-container">' +
 		'	<div class = "title-container">' +
-		'		<div class="title">Meal Creator</div>' +
+		'		<div class="itemBlockTitle">Meal Creator</div>' +
 		'			<button class="addMealButton" onclick="mealCreatorAddMeal();">Add Meal</button>' +
 		'	</div>';
 

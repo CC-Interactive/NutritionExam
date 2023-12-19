@@ -64,7 +64,7 @@ const appData = {
 		1002: {
 			id: 1002,
 			name: "Burger",
-			energy: 0,
+			energy: 120,
 			water: 0,
 			protein: 0,
 			fat: 0,

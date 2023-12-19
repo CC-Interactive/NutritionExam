@@ -2,10 +2,10 @@ function mealIngeidientUpdateContent(element, mealId) {
 	//clear element content
 	element.innerHTML = '';
 	let content = '' +
-		'<div style="display: flex; gap: 20px;" class="pageContent mealIngredientPage mealId' + mealId + ' meal-tracker-card-container">' +
+		'<div style="display: flex; gap: 20px; align-items: baseline;" class="pageContent mealIngredientPage mealId' + mealId + ' meal-tracker-card-container">' +
 		'	<div class = "first-container">' +
 		'	<div class = "title-container">' +
-		'		<div class="title">Ingredients of ' + appData.meal[mealId].name + '</div>' +
+		'		<div class="itemBlockTitle">Ingredients of ' + appData.meal[mealId].name + '</div>' +
 		'			<button class="addMealButton" onclick="mealIngeidientBackToMealCreator();">Back to Meal</button>' +
 		'	</div>';
 

@@ -80,8 +80,14 @@
       <section class="stats-container">
         <div class="meal-tracker-card-container">
           <div class="title-container">
-            <div class="title">Meal Tracker</div>
-            <button class="addMealButton" id="addMealButton" onclick="addMeal()">Add Meal</button>
+            <div class="itemBlockTitle">Meal Tracker</div>
+            <button
+              class="addMealButton"
+              id="addMealButton"
+              onclick="addMeal()"
+            >
+              Add Meal
+            </button>
           </div>
           <div class="meal-header">
             <div class="source" style="width: 20%">Meal & Source</div>
@@ -93,208 +99,8 @@
               Actions
             </div>
           </div>
-          <div id="mealList">
-          </div>
-        </div>
-        <script>
-          function addMeal() {
-            const mealList = document.getElementById("mealList");
-
-            const mealRow = document.createElement("div");
-            mealRow.classList.add("meal");
-            mealRow.setAttribute("contenteditable", "false");
-
-            const mealSourceSelect = document.createElement("select");
-            Object.keys(appData.meal).forEach((id) => {
-              const option = document.createElement("option");
-              option.value = id;
-              option.textContent = appData.meal[id].name; 
-              mealSourceSelect.appendChild(option);
-            });
-
-            const mealTypeSelect = document.createElement("select");
-            ["Breakfast", "Lunch", "Dinner"].forEach((type) => {
-              const option = document.createElement("option");
-              option.value = type;
-              option.textContent = type;
-              mealTypeSelect.appendChild(option);
-            });
-
-            const weightInput = document.createElement("input");
-            weightInput.type = "number";
-            weightInput.value = "100";
-            weightInput.oninput = function () {
-              const selectedMeal = appData.meal[mealSourceSelect.value];
-              if (selectedMeal) {
-                energyInput.value = selectedMeal.energy * (this.value / 100);
-              }
-            };
-
-            const energyInput = document.createElement("input");
-            energyInput.type = "text";
-            energyInput.setAttribute("readonly", "true"); 
-
-            const datePicker = document.createElement("input");
-            datePicker.type = "date";
-
-            const percentInput = document.createElement("input");
-            percentInput.type = "text";
-            percentInput.value = "0%"; 
-
-            const editButton = document.createElement("button");
-            editButton.textContent = "✏️";
-            editButton.onclick = function () {
-              const editable =
-                mealRow.getAttribute("contenteditable") === "true";
-              mealRow.setAttribute("contenteditable", !editable);
-            };
-
-            const newMealId = modelGenerateId();
-            const newMealData = {
-              id: newMealId,
-              name: "New Meal",
-              type: "Dinner",
-              weight: 100, 
-              energy: 0, 
-              addedOn: new Date().toISOString().split("T")[0], 
-              percent: 0, 
-              percentCons: "0%", 
-            };
-
-            const newMealRow = createMealRow(newMealData);
-            mealList.appendChild(newMealRow);
-          }
-        </script>
-        <script>
-
-          function createMealRow(mealData) {
-            const mealRow = document.createElement("div");
-            mealRow.classList.add("meal");
-            mealRow.dataset.mealId = mealData.id;
-
-            const mealNameDiv = document.createElement("div");
-            mealNameDiv.classList.add("meal-name");
-            mealNameDiv.style.width = "20%";
-            mealNameDiv.textContent = mealData.name;
-            mealRow.appendChild(mealNameDiv);
-
-            const mealTypeDiv = document.createElement("div");
-            mealTypeDiv.classList.add("meal-type");
-            mealTypeDiv.style.width = "12%";
-            mealTypeDiv.textContent = mealData.type;
-            mealRow.appendChild(mealTypeDiv);
-
-            const weightEnergyDiv = document.createElement("div");
-            weightEnergyDiv.classList.add("weight-energy");
-            weightEnergyDiv.style.width = "12%";
-            weightEnergyDiv.innerHTML = `${mealData.weight}g <div class="source">${mealData.energy} Kcal</div>`;
-            mealRow.appendChild(weightEnergyDiv);
-
-            const dateDiv = document.createElement("div");
-            dateDiv.classList.add("date");
-            dateDiv.style.width = "12%";
-            dateDiv.textContent = mealData.addedOn;
-            mealRow.appendChild(dateDiv);
-
-            const percentDiv = document.createElement("div");
-            percentDiv.classList.add("percent");
-            percentDiv.style.width = "12%";
-            percentDiv.textContent = `${mealData.percent}g ${mealData.percentCons}`;
-            mealRow.appendChild(percentDiv);
-
-            const actionsDiv = document.createElement("div");
-            actionsDiv.classList.add("actions");
-            actionsDiv.style.width = "12%";
-            actionsDiv.style.justifyContent = "end";
-
-            const editButton = document.createElement("div");
-            editButton.classList.add("icon");
-            editButton.textContent = "✏️";
-            editButton.onclick = function () {
-              if (editButton.textContent === "✏️") {
-                makeEditable(mealRow, true);
-                editButton.textContent = "💾";
-              } else {
-                saveMeal(mealRow, mealData);
-                makeEditable(mealRow, false);
-                editButton.textContent = "✏️";
-              }
-            };
-            actionsDiv.appendChild(editButton);
-
-            // Delete Button
-            const deleteButton = document.createElement("div");
-            deleteButton.classList.add("icon");
-            deleteButton.textContent = "🗑️";
-            actionsDiv.appendChild(deleteButton);
-
-            mealRow.appendChild(actionsDiv);
-
-            return mealRow;
-          }
-
-          function makeEditable(mealRow, editable) {
-            [...mealRow.children].forEach((div) => {
-              if (div.classList.contains("source")) {
-                return;
-              }
-              if (editable && !div.classList.contains("actions")) {
-                div.setAttribute("contenteditable", "true");
-              } else {
-                div.removeAttribute("contenteditable");
-              }
-            });
-          }
-
-          function saveMeal(mealRow, mealData) {
-            if (typeof mealData === "object" && mealData.hasOwnProperty("id")) {
-              const mealId = mealData.id;
-
-              if (!appData.mealTrecker[mealId]) {
-                appData.mealTrecker[mealId] = {
-                  id: mealId,
-                  name: "",
-                  type: "",
-                  weight: 0,
-                  energy: 0,
-                  addedOn: "",
-                  percent: 0,
-                  percentCons: "0%",
-                };
-              }
-
-              const mealNameDiv = mealRow.querySelector(".meal-name");
-              const mealTypeDiv = mealRow.querySelector(".meal-type");
-              const weightEnergyDiv = mealRow.querySelector(".weight-energy");
-              const dateDiv = mealRow.querySelector(".date");
-              const percentDiv = mealRow.querySelector(".percent");
-
-              appData.mealTrecker[mealId].name = mealNameDiv.textContent;
-              appData.mealTrecker[mealId].type = mealTypeDiv.textContent;
-              appData.mealTrecker[mealId].weight =
-                weightEnergyDiv.childNodes[0].textContent
-                  .replace("g", "")
-                  .trim();
-              appData.mealTrecker[mealId].energy = weightEnergyDiv
-                .querySelector(".source")
-                .textContent.replace("Kcal", "")
-                .trim();
-              appData.mealTrecker[mealId].addedOn = dateDiv.textContent;
-              appData.mealTrecker[mealId].percent =
-                percentDiv.textContent.split(" ")[0];
-              appData.mealTrecker[mealId].percentCons =
-                percentDiv.textContent.split(" ")[1];
-
-              mealNameDiv.innerHTML = appData.mealTrecker[mealId].name;
-              mealTypeDiv.innerHTML = appData.mealTrecker[mealId].type;
-              weightEnergyDiv.innerHTML = `${appData.mealTrecker[mealId].weight}g <div class="source">${appData.mealTrecker[mealId].energy} Kcal</div>`;
-              dateDiv.innerHTML = appData.mealTrecker[mealId].addedOn;
-              percentDiv.innerHTML = `${appData.mealTrecker[mealId].percent}g ${appData.mealTrecker[mealId].percentCons}`;
-            } else {
-              console.error("Invalid meal data provided to saveMeal function");
-            }
-          }
-        </script>
+          <div id="mealList"></div>
+        </div>          
       </section>
     </div>
     <div id="NutriReport" class="main-content disabled">
@@ -312,11 +118,9 @@
     <script src="js/ProductDetail.js"></script>
     <script src="js/MealCreator.js"></script>
     <script src="js/MealIngredient.js"></script>
+    <script src="js/MealTracker.js"></script>
     <script type="text/javascript">
       mealCreatorUpdateContent(document.getElementById("MealCreator"));
-    </script>
-    <script>
-      const a = 1000;
     </script>
   </body>
 </html>
