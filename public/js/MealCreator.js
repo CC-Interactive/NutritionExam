@@ -26,7 +26,7 @@ function mealCreatorUpdateContent(element) {
 			'		<div class="itemCell editable editableFieldName" style="width: 20%">' + meal.name + '</div>' +
 			'		<div class="itemCell" style="width: 15%">' + meal.energy + '</div>' +
 			'		<div class="itemCell" style="width: 12%">' + meal.createDate.toLocaleDateString() + '</div>' +
-			'		<div class="itemCell" style="width: 12%">' + meal.ingredients.length + '</div>' +
+			'		<div class="itemCell" style="width: 12%">' + utilsCountObjectFields(meal.ingredients) + '</div>' +
 			'		<div class="itemCell" style="width: 12%"> Meal Tracker Integration </div>' +
 			'		<div class="itemCell buttons" style="width: 12%; justify-content: end;">' +
 			'			<div class="button buttonIngr" onclick="mealCreatorIngredient(' + meal.id + ');">📖</div>' +
