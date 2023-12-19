@@ -94,4 +94,20 @@ function mealCreatorIngredient(mealId) {
 	mealIngeidientUpdateContent(document.getElementById('MealIngredient'), mealId);
 	activePage('MealIngredient');
 }
+function mealCreatorRecalculateIngredientCharacteristics() {
+	for (const mealId in appData.meal) {
+		const meal = appData.meal[mealId];
+		//reset calculations for meal
+		for (const key in appData.productCharacteristics) {
+			if (meal.hasOwnProperty(key)) meal[key] = 0;
+		}
+
+		for (const ingredientId in meal.ingredients) {
+			const ingredient = meal.ingredients[ingredientId];
+			for (const key in appData.productCharacteristics) {
+				if (ingredient.hasOwnProperty(key) && meal.hasOwnProperty(key)) meal[key] += ingredient[key] / 100 * ingredient.weight;
+			}
+		}
+	}
+}
 
