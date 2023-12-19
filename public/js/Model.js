@@ -1,4 +1,4 @@
-const appData = {
+let appData = {
 	/**
 	 * IdBaseObject
 	 * {
@@ -202,37 +202,6 @@ const appData = {
 			}
 		}
 	},
-	/**
-	 * IdBaseObject
-	 * {
-	 *     id: {
-	 *         id: -1,
-	 *         name: null,
-	 *         characteristics: []//Array of values from  productCharacteristics.data
-	 *         dataLoaded: false // data caching flag. Shows that characteristics are loaded or not
-	 *     }
-	 * }
-	 * Data example:
-	 * {
-	 *  1837: {
-	 *     "id": 1837,
-	 *     "name": "Pearl onion. frozen",
-	 *     "characteristics": [
-	 *       calories: 29.14
-	 *       dryMatter: 12.61
-	 *       energyKj: 119.47
-	 *       fat: 0
-	 *       fiber: 8.05
-	 *       protein: 1.21875
-	 *       water: 87.39
-	 *     ],
-	 *     "dataLoaded": true
-	 *   }
-	 * }
-	 */
-	products: {
-
-	},
 	productCharacteristics: {
 		energy: {
 			id: 1030,
@@ -269,10 +238,43 @@ const appData = {
 		energyKj: {
 			id: 1010
 		}
-	}
-}
-let idGenerator = 10000;
+	},
+	idGenerator: 10000
+};
+const appCache = {
+	/**
+	 * IdBaseObject
+	 * {
+	 *     id: {
+	 *         id: -1,
+	 *         name: null,
+	 *         characteristics: []//Array of values from  productCharacteristics.data
+	 *         dataLoaded: false // data caching flag. Shows that characteristics are loaded or not
+	 *     }
+	 * }
+	 * Data example:
+	 * {
+	 *  1837: {
+	 *     "id": 1837,
+	 *     "name": "Pearl onion. frozen",
+	 *     "characteristics": [
+	 *       calories: 29.14
+	 *       dryMatter: 12.61
+	 *       energyKj: 119.47
+	 *       fat: 0
+	 *       fiber: 8.05
+	 *       protein: 1.21875
+	 *       water: 87.39
+	 *     ],
+	 *     "dataLoaded": true
+	 *   }
+	 * }
+	 */
+	products: {
+
+	},
+};
 function modelGenerateId() {
-	idGenerator++;
-	return idGenerator;
+	appData.idGenerator++;
+	return appData.idGenerator;
 }

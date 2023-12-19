@@ -4,7 +4,7 @@ async function recieverSearchProductByName(productName) {
 		integrationFoodItemsSearch(productName).then(response => {
 			const promiseArr = [];
 			response.forEach(intProduct => {
-				if (!appData.products[intProduct.foodID]) {
+				if (!appCache.products[intProduct.foodID]) {
 					_updateProductFromApiResponse(intProduct);
 				}
 				promiseArr.push(recieverGetProductById(intProduct.foodID));
@@ -18,8 +18,8 @@ async function recieverSearchProductByName(productName) {
 
 async function recieverGetProductById(productId) {
 	return new Promise((resolve, reject) => {
-		if (appData.products[productId]) {
-			resolve(appData.products[productId]);
+		if (appCache.products[productId]) {
+			resolve(appCache.products[productId]);
 		} else {
 			integrationFoodItemById(productId).then(response => {
 				resolve(_updateProductFromApiResponse(response));
@@ -28,12 +28,12 @@ async function recieverGetProductById(productId) {
 	});
 }
 function _updateProductFromApiResponse(intProduct) {
-	appData.products[intProduct.foodID] = {
+	appCache.products[intProduct.foodID] = {
 		id: intProduct.foodID,
 		name: intProduct.foodName,
 		characteristics: []
 	}
-	return appData.products[intProduct.foodID];
+	return appCache.products[intProduct.foodID];
 }
 async function recieverGetProductDataById(productId) {
 	return new Promise((resolve, reject) => {
