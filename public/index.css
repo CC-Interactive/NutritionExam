@@ -137,6 +137,15 @@ body {
   gap: 20px;
 }
 
+
+.itemBlockVertical, .productSearchResults, .mealIngredientBlock {
+  background-color: unset !important;
+  box-shadow: unset !important;
+  width: unset !important;
+  margin: unset !important;
+  padding: unset !important;
+}
+
 .itemBlock {
   background-color: #e8f5e9;
   border-radius: 8px;

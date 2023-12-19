@@ -32,7 +32,7 @@ function mealCreatorUpdateContent(element) {
 			'			<div class="button buttonIngr" onclick="mealCreatorIngredient(' + meal.id + ');">📖</div>' +
 			'			<div class="button buttonEditStart" onclick="mealCreatorEditStart(' + meal.id + ');">✏️</div>' +
 			'			<div class="button buttonEditFinish disabled" onclick="mealCreatorEditFinish(' + meal.id + ');">💾</div>' +
-			'			<div class="button buttonEditFinish" onclick="mealCreatorDelete(' + meal.id + ');">🗑</div>' +
+			'			<div class="button buttonEditFinish" onclick="mealCreatorDelete(' + meal.id + ');">🗑️</div>' +
 			'		</div>' +
 			'	</div>' +
 			'';

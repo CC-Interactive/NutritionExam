@@ -17,7 +17,7 @@ function mealIngeidientUpdateContent(element, mealId) {
 		'	<input type="text" class="searchProductInput" placeholder="Enter product name...">' +
 		'	<button class="addMealButton" onclick="mealIngredientSearchProduct()">Search</button>' +
 		'</div>' +
-		'<div class="itemBlock productSearchResults">' +
+		'<div class="itemBlock productSearchResults" style="padding: 0">' +
 		'</div>';
 	content += '</div>';
 
@@ -51,7 +51,7 @@ function mealIngredientUpdateIngredientBlock() {
 	for (const key in appData.meal[mealId].ingredients) {
 		const item = appData.meal[mealId].ingredients[key];
 		content += '' +
-			'	<div class="itemRow mealIngredient itemId' + item.id + '">' +
+			'	<div class="itemRow meal mealIngredient itemId' + item.id + '">' +
 			'		<div class="itemCell" style="width: 20%">' + item.name + '</div>' +
 			'		<div class="itemCell editable editableFieldWeight" style="width: 15%">' + item.weight + '</div>' +
 			'		<div class="itemCell" style="width: 12%">' + item.createDate.toLocaleDateString() + '</div>' +
@@ -59,7 +59,7 @@ function mealIngredientUpdateIngredientBlock() {
 			'			<div class="button buttonIngr" onclick="mealIngeidientOpenProductDetails(' + item.productId + ');">📖</div>' +
 			'			<div class="button buttonEditStart" onclick="mealIngeidientEditStart(' + item.id + ');">✏️</div>' +
 			'			<div class="button buttonEditFinish disabled" onclick="mealIngeidientEditFinish(' + item.id + ');">💾</div>' +
-			'			<div class="button buttonEditFinish" onclick="mealIngeidientDelete(' + item.id + ');">🗑</div>' +
+			'			<div class="button buttonEditFinish" onclick="mealIngeidientDelete(' + item.id + ');">🗑️</div>' +
 			'		</div>' +
 			'	</div>' +
 			'';
@@ -93,7 +93,7 @@ function mealIngredientSearchProduct() {
 	recieverSearchProductByName(productName).then(products => {
 		products.forEach(product => {
 			searchResultBlock.innerHTML+='' +
-				'<div class="itemRow productSearchResult">' +
+				'<div class="itemRow productSearchResult meal">' +
 				'	<div class="itemCell" style="width: 70%">' + product.name + '</div>' +
 				'	<div class="itemCell buttons" style="width: 12%; justify-content: end;">' +
 				'		<div class="button buttonIngr" onclick="mealIngeidientOpenProductDetails(' + product.id + ');">📖</div>' +
