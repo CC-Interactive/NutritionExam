@@ -48,8 +48,8 @@
                 <h2>Energy Today</h2>
               </div>
               <div class="card-content">
-                <h3>1231 kcal</h3>
-                <p>Or 60% of daily recommendation</p>
+                <h3></h3>
+                <p></p>
               </div>
             </div>
             <div class="card">
@@ -57,7 +57,7 @@
                 <h2>Water Today</h2>
               </div>
               <div class="card-content">
-                <h3>1.2 L</h3>
+                <h3></h3>
                 <p>consumed today</p>
               </div>
             </div>
@@ -66,8 +66,8 @@
                 <h2>Protein Today</h2>
               </div>
               <div class="card-content">
-                <h3>30g</h3>
-                <p>53% of daily recommendation</p>
+                <h3></h3>
+                <p></p>
               </div>
             </div>
           </div>
@@ -116,13 +116,10 @@
             <div class="source" style="width: 12%">kcal consumed</div>
             <div class="source" style="width: 12%">Protein</div>
             <div class="source" style="width: 12%">Fat</div>
-            <div class="source" style="width: 12%; text-align: end">
-              Fiber
-            </div>
+            <div class="source" style="width: 12%; text-align: end">Fiber</div>
           </div>
           <div id="nutrition-card"></div>
         </div>
-        
       </section>
     </div>
     <div id="ProductDescription" class="main-content disabled"></div>
@@ -136,14 +133,21 @@
     <script src="js/MealIngredient.js"></script>
     <script src="js/MealTracker.js"></script>
     <script src="js/NutriReport.js"></script>
+    <script src="js/Dashboard.js"></script>
     <script>
-      document.querySelector('.navigation-link[href="#NutriReport"]').addEventListener('click', function() {
-        console.log('+')
-        displayNutritionReport();
-        });          
+      document
+        .querySelector('.navigation-link[href="#NutriReport"]')
+        .addEventListener("click", function () {
+          displayNutritionReport();
+        });
+      document
+        .querySelector('.navigation-link[href="#Dashboard"]')
+        .addEventListener("click", function () {
+          updateDashboard();
+        });
     </script>
     <script type="text/javascript">
-		mealCreatorRecalculateIngredientCharacteristics();
+      mealCreatorRecalculateIngredientCharacteristics();
       mealCreatorUpdateContent(document.getElementById("MealCreator"));
     </script>
   </body>

@@ -46,7 +46,6 @@ function aggregateNutritionData() {
     const aggregatedData = aggregateNutritionData();
     const nutritionCardsContainer = document.getElementById("nutrition-card");
   
-    // Clear existing content
     nutritionCardsContainer.innerHTML = '';
   
     Object.entries(aggregatedData).forEach(([date, data]) => {
@@ -55,6 +54,4 @@ function aggregateNutritionData() {
     });
   }
   
-  // Call this function to update the report
-
   

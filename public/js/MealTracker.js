@@ -25,13 +25,13 @@ function addMeal() {
     weightInput.type = "number";
     weightInput.value = "100";
     weightInput.addEventListener("input", function () {
-      const selectedMealId = mealSourceSelect.value; // Correctly reference mealSourceSelect
+      const selectedMealId = mealSourceSelect.value; 
       const selectedMeal = appData.meal[selectedMealId];
       if (selectedMeal) {
         const weight = parseFloat(this.value);
         const energyPer100g = selectedMeal.energy;
         const calculatedEnergy = (weight / 100) * energyPer100g;
-        energyInput.value = calculatedEnergy.toFixed(2); // Update the energy input field
+        energyInput.value = calculatedEnergy.toFixed(2); 
       }
     });
 
@@ -125,7 +125,6 @@ function addMeal() {
     };
     actionsDiv.appendChild(editButton);
 
-    // Delete Button
     const deleteButton = document.createElement("div");
     deleteButton.classList.add("icon");
     deleteButton.textContent = "🗑️";
@@ -141,10 +140,8 @@ function addMeal() {
 
   function makeEditable(mealRow, editable) {
     [...mealRow.children].forEach((div) => {
-      // Toggle contenteditable attribute and editing class
       if (div.classList.contains("meal-name") || div.classList.contains("meal-type")) {
         if (editable) {
-          // Add editing class and replace with dropdown if needed
           div.classList.add("editing");
           if (div.classList.contains("meal-name") && !div.querySelector("select")) {
             div.innerHTML = "";
@@ -154,7 +151,6 @@ function addMeal() {
             div.appendChild(createMealTypeDropdown(div.textContent.trim()));
           }
         } else {
-          // Remove editing class and revert to text if dropdown is present
           div.classList.remove("editing");
           const dropdown = div.querySelector("select");
           if (dropdown) {
@@ -162,7 +158,6 @@ function addMeal() {
           }
         }
       } else if (!div.classList.contains("actions")) {
-        // For other editable fields
         div.setAttribute("contenteditable", editable);
         if (editable) {
           div.classList.add("editing");
@@ -269,10 +264,8 @@ function addMeal() {
   }
 
   function deleteMeal(mealRow, mealId) {
-    // Remove the meal row from the DOM
     mealRow.remove();
   
-    // Remove the meal data from appData.mealTrecker
     if (appData.mealTrecker && appData.mealTrecker[mealId]) {
       delete appData.mealTrecker[mealId];
     }
