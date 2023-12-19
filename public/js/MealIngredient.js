@@ -6,7 +6,7 @@ function mealIngeidientUpdateContent(element, mealId) {
 		'	<div class = "first-container">' +
 		'	<div class = "title-container">' +
 		'		<div class="title">Ingredients of ' + appData.meal[mealId].name + '</div>' +
-		'			<button class="addMealButton" onclick="activePage(\'MealCreator\');">Back to Meal</button>' +
+		'			<button class="addMealButton" onclick="mealIngeidientBackToMealCreator();">Back to Meal</button>' +
 		'	</div>';
 
 	content += '<div class="itemBlock mealIngredientBlock itemBlockVertical itemBlockVertical70">';
@@ -158,4 +158,9 @@ function mealIngeidientDelete(itemId) {
 	delete appData.meal[mealId].ingredients[itemId]
 
 	mealIngredientUpdateIngredientBlock();
+}
+function mealIngeidientBackToMealCreator() {
+	let mealId = mealIngredientGetMealId();
+	mealCreatorUpdateContent(mealCreatorFindContainer());
+	activePage('MealCreator');
 }
