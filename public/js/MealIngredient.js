@@ -2,14 +2,15 @@ function mealIngeidientUpdateContent(element, mealId) {
 	//clear element content
 	element.innerHTML = '';
 	let content = '' +
-		'<div class="pageContent mealIngredientPage mealId' + mealId + ' meal-tracker-card-container">' +
+		'<div style="display: flex; gap: 20px;" class="pageContent mealIngredientPage mealId' + mealId + ' meal-tracker-card-container">' +
+		'	<div class = "first-container">' +
 		'	<div class = "title-container">' +
 		'		<div class="title">Ingredients of ' + appData.meal[mealId].name + '</div>' +
 		'			<button class="addMealButton" onclick="activePage(\'MealCreator\');">Back to Meal</button>' +
 		'	</div>';
 
 	content += '<div class="itemBlock mealIngredientBlock itemBlockVertical itemBlockVertical70">';
-	content += '</div>';
+	content += '</div></div>';
 	
 	content += '<div class="itemBlock itemBlockVertical itemBlockVertical30">' +
 		'<div class="itemBlockTitle">Search for a Product</div>' +

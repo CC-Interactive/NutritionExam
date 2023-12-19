@@ -261,3 +261,7 @@ body {
   border-radius: 5px;
   cursor: pointer;
 }
+
+.first-container {
+  flex: 3;
+}
