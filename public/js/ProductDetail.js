@@ -3,6 +3,11 @@ function productDetailUpdateContent(element, productId) {
 	element.innerHTML = '';
 	recieverGetProductDataById(productId).then(product =>{
 		let content = '<div id="productDetailContent' + productId + '" class="pageContent productDetailsPage">';
+		content += '' +
+			'<div class = "title-container">' +
+			'	<div class="title">' +
+			'	</div><button class="addMealButton" onclick="activePage(\'MealIngredient\');">Back to Ingredients</button></div>' +
+			'</div>';
 		content += '<div class = "pageTitle"></div>' +
 			'<div class="itemBlock itemBaseInfo">' +
 			'	<div class="itemRow">' +

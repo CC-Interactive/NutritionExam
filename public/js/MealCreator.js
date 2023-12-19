@@ -16,9 +16,9 @@ function mealCreatorUpdateContent(element) {
 		'		<div class="itemCell itemHeader source" style="width: 12%"># Ingredients</div>' +
 		'		<div class="itemCell itemHeader source" style="width: 12%">Times Eaten</div>' +
 		'		<div class="itemCell itemHeader source" style="width: 12%; justify-content: end;">Actions</div>' +
+		'	</div>' +
 		'';
 
-	content += '</div>';
 	for (const key in appData.meal) {
 		const meal = appData.meal[key];
 		content += '' +
@@ -37,7 +37,6 @@ function mealCreatorUpdateContent(element) {
 			'	</div>' +
 			'';
 	}
-	content += '</div>';
 
 	content += '</div>';
 	element.innerHTML += content;
@@ -62,7 +61,7 @@ function mealCreatorAddMeal() {
 		fat: 0,
 		fiber: 0,
 		createDate: new Date(),
-		ingredients: []
+		ingredients: {}
 	};
 	mealCreatorUpdateContent(mealCreatorFindContainer());
 }
@@ -90,5 +89,9 @@ function mealCreatorDelete(mealId) {
 	delete appData.meal[mealId]
 
 	mealCreatorUpdateContent(mealCreatorFindContainer());
+}
+function mealCreatorIngredient(mealId) {
+	mealIngeidientUpdateContent(document.getElementById('MealIngredient'), mealId);
+	activePage('MealIngredient');
 }
 

@@ -10,9 +10,9 @@ const appData = {
 	 *     }
 	 * }
 	 */
-	mealIngredient: {
-
-	},
+	// mealIngredient: {
+	//
+	// },
 	/**
 	 * IdBaseObject
 	 * {
@@ -34,7 +34,7 @@ const appData = {
 	// 	"name": "Meal Name",
 	// 	"energy": 0,
 	// 	"createDate": "2023-12-18T15:43:39.222Z",
-	// 	"ingredients": []
+	// 	"ingredients": {}
 	// }
 	meal: {
 		1001: {
@@ -46,7 +46,20 @@ const appData = {
 			fat: 0,
 			fiber: 0,
 			createDate: new Date("2023-12-18T20:55:43.760Z"),
-			ingredients: []
+			ingredients: {
+				105: {
+					id: 105,
+					name: "French fries, deepfried, fast food",
+					weight: 100,
+					water: 37.085,
+					protein: 3.6984375,
+					fat: 14.81,
+					fiber: 3.22,
+					createDate: new Date("2023-12-18T23:51:50.762Z"),
+					mealId: 1001,
+					productId: 1209
+				}
+			}
 		},
 		1002: {
 			id: 1002,
@@ -57,7 +70,20 @@ const appData = {
 			fat: 0,
 			fiber: 0,
 			createDate: new Date("2023-12-18T20:56:03.824Z"),
-			ingredients: []
+			ingredients: {
+				104: {
+					id: 104,
+					name: "Hamburger sandwich with salad and dressing, fast food",
+					weight: 100,
+					water: 55.45660377,
+					protein: 9.279481132,
+					fat: 11.83584906,
+					fiber: 1.6,
+					createDate: new Date("2023-12-18T23:50:58.087Z"),
+					mealId: 1002,
+					productId: 847
+				}
+			}
 		},
 		1004: {
 			id: 1004,
@@ -68,7 +94,20 @@ const appData = {
 			fat: 0,
 			fiber: 0,
 			createDate: new Date("2023-12-18T20:56:35.958Z"),
-			ingredients: []
+			ingredients: {
+				102: {
+					id: 102,
+					name: "Pizza with tomato and cheese, fast food",
+					weight: 100,
+					water: 32.675,
+					protein: 13.3125,
+					fat: 13.475,
+					fiber: 2.4,
+					createDate: new Date("2023-12-18T23:47:58.088Z"),
+					mealId: 1004,
+					productId: 1646
+				}
+			}
 		}
 	},
 	/**
