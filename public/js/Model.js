@@ -51,6 +51,7 @@ const appData = {
 					id: 105,
 					name: "French fries, deepfried, fast food",
 					weight: 100,
+					energy: 310.5,
 					water: 37.085,
 					protein: 3.6984375,
 					fat: 14.81,
@@ -75,6 +76,7 @@ const appData = {
 					id: 104,
 					name: "Hamburger sandwich with salad and dressing, fast food",
 					weight: 100,
+					energy: 226.8962264,
 					water: 55.45660377,
 					protein: 9.279481132,
 					fat: 11.83584906,
@@ -99,6 +101,7 @@ const appData = {
 					id: 102,
 					name: "Pizza with tomato and cheese, fast food",
 					weight: 100,
+					energy: 322.065,
 					water: 32.675,
 					protein: 13.3125,
 					fat: 13.475,
@@ -106,6 +109,95 @@ const appData = {
 					createDate: new Date("2023-12-18T23:47:58.088Z"),
 					mealId: 1004,
 					productId: 1646
+				}
+			}
+		},
+		1005: {
+			id: 1005,
+			name: 'Salad',
+			energy: 0,
+			water: 0,
+			protein: 0,
+			fat: 0,
+			fiber: 0,
+			createDate: new Date('2023-12-19T00:02:57.697Z'),
+			ingredients: {
+				110: {
+					id: 110,
+					name: 'Feta, 5% (Salad cheese)',
+					weight: 20,
+					energy: 176.39,
+					water: 64,
+					protein: 21.692,
+					fat: 9.23,
+					createDate: new Date('2023-12-19T00:03:10.649Z'),
+					mealId: 1005,
+					productId: 1771
+				},
+				111: {
+					id: 111,
+					name: 'Tomato, ripe, raw, origin unknown',
+					weight: 30,
+					water: 93.68492958,
+					energy: 20.66115038,
+					protein: 0.782638889,
+					fat: 0.15,
+					fiber: 1.442121212,
+					createDate: new Date('2023-12-19T00:03:37.544Z'),
+					mealId: 1005,
+					productId: 52
+				},
+				112: {
+					id: 112,
+					name: 'Gherkin cucumber, raw',
+					weight: 30,
+					energy: 16.7,
+					water: 94.6,
+					protein: 1.2,
+					fat: 0.1,
+					fiber: 1.3,
+					createDate: new Date('2023-12-19T00:04:06.884Z'),
+					mealId: 1005,
+					productId: 540
+				},
+				113: {
+					id: 113,
+					name: 'Onion, raw',
+					weight: 10,
+					energy: 43.19300945,
+					water: 87.91315789,
+					protein: 1.245833333,
+					fat: 0.085714286,
+					fiber: 1.863846154,
+					createDate: new Date('2023-12-19T00:04:26.261Z'),
+					mealId: 1005,
+					productId: 716
+				},
+				114: {
+					id: 114,
+					name: 'Olive oil',
+					energy: 900,
+					weight: 5,
+					water: 0,
+					protein: 0,
+					fat: 100,
+					fiber: 0,
+					createDate: new Date('2023-12-19T00:05:13.063Z'),
+					mealId: 1005,
+					productId: 1467
+				},
+				115: {
+					id: 115,
+					name: 'Salt, table',
+					energy: 0,
+					weight: 5,
+					water: 0.6,
+					protein: 0,
+					fat: 0,
+					fiber: 0,
+					createDate: new Date('2023-12-19T00:05:46.178Z'),
+					mealId: 1005,
+					productId: 417
 				}
 			}
 		}
@@ -142,7 +234,7 @@ const appData = {
 
 	},
 	productCharacteristics: {
-		calories: {
+		energy: {
 			id: 1030,
 			data: {//FoodComposition
 				compID: -1,

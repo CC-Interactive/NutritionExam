@@ -132,6 +132,7 @@ function mealIngeidientAddIngredient(productId) {
 			mealId: mealIngredientGetMealId(),
 			productId: product.id
 		};
+		mealCreatorRecalculateIngredientCharacteristics();
 		mealIngredientUpdateIngredientBlock();
 	});
 }
@@ -151,6 +152,7 @@ function mealIngeidientEditFinish(itemId) {
 		row = mealIngeidientFindPageContent().getElementsByClassName('itemRow itemId' + itemId)[0],
 		weightCell = row.getElementsByClassName('itemCell editable editableFieldWeight')[0];
 	appData.meal[mealId].ingredients[itemId].weight = Number(weightCell.textContent);
+	mealCreatorRecalculateIngredientCharacteristics();
 	mealIngredientUpdateIngredientBlock();
 }
 function mealIngeidientDelete(itemId) {
