@@ -1,3 +1,12 @@
+function loadMealRecords() {
+    const mealList = document.getElementById("mealList");
+  
+    Object.values(appData.mealTrecker).forEach(mealData => {
+      const mealRow = createMealRow(mealData);
+      mealList.appendChild(mealRow);
+    });
+  }  
+
 function addMeal() {
     const mealList = document.getElementById("mealList");
 

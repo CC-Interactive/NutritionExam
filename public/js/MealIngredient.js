@@ -12,7 +12,7 @@ function mealIngeidientUpdateContent(element, mealId) {
 	content += '<div class="itemBlock mealIngredientBlock itemBlockVertical itemBlockVertical70">';
 	content += '</div></div>';
 	
-	content += '<div class="itemBlock itemBlockVertical itemBlockVertical30">' +
+	content += '<div class="itemBlock itemBlockVertical itemBlockVertical30" style="flex: 1;">' +
 		'<div class="itemBlockTitle">Search for a Product</div>' +
 		'<div class="itemRow">' +
 		'	<input type="text" class="searchProductInput" placeholder="Enter product name...">' +
